@@ -22,13 +22,13 @@ public class HostedGame
 	public function Host() : void 
 	{
 		if (this.Password != "") {
-			Network.incomingPassword = this.Password;
+			//Network.incomingPassword = this.Password;
 		}
 				
 		Network.InitializeSecurity();
 		
 		Network.InitializeServer(this.MaxPlayers, this.Port, this.UseNat);
 		
-		MasterServer.RegisterHost(Globals.GameModeName, this.Name, this.Description);
+		MasterServer.RegisterHost(Globals.GameModeName, this.Name, this.Description);		
 	}
 }

@@ -4,12 +4,14 @@
 public class ServerSelectGUI extends MonoBehaviour 
 {
 	function Awake() {
-    	MasterServer.RequestHostList(Globals.GameModeName);
+    	MasterServer.RequestHostList(Globals.GameModeName);    	
     }
 
 	function OnGUI() {
 	
-		var data : HostData[] = MasterServer.PollHostList();	    
+		var data : HostData[] = MasterServer.PollHostList();	
+		
+		Debug.Log(data.Length);
 	    
 	    // Copied most of this from the unit documentation #sorrynotsorry
 	    for (var element : HostData in data)
@@ -38,8 +40,10 @@ public class ServerSelectGUI extends MonoBehaviour
 	            	Network.Connect(element.guid);
 	            }
 	            
-	            else
+	            else {
 	            	Network.Connect(element.ip, element.port);
+	            	//Network.Connect( "160.9.96.173", 8080);
+	            }
 	            
 	        }
 	        GUILayout.EndHorizontal();  
