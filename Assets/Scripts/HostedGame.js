@@ -24,7 +24,7 @@ public class HostedGame
 		if (this.Password != "") {
 			Network.incomingPassword = this.Password;
 		}
-		
+				
 		Network.InitializeSecurity();
 		
 		Network.InitializeServer(this.MaxPlayers, this.Port, this.UseNat);

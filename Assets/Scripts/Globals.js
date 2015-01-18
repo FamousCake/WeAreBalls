@@ -2,5 +2,5 @@
 
 public static class Globals 
 {
-	public static final var GameModeName : String = "Pliok";
+	public static final var GameModeName : String = "WeAreBalls1337";
 }
