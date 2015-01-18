@@ -36,14 +36,16 @@ public class ServerSelectGUI extends MonoBehaviour
 	        GUILayout.FlexibleSpace();
 	        if (GUILayout.Button("Connect"))
 	        {
-	        	if ( element.useNat ) {       
-	            	Network.Connect(element.guid);
-	            }
-	            
-	            else {
-	            	Network.Connect(element.ip, element.port);
-	            	//Network.Connect( "160.9.96.173", 8080);
-	            }
+	        	var Game : ConnectedGame = this.gameObject.GetComponent("ConnectedGame") as ConnectedGame;
+	        	
+	        	Game.SetParameters(element);
+	        	
+	        	Game.MakeConnection(function(){
+	        		
+	        		Debug.Log("You have successfully CONNECTED to a SERVER!");
+					Transition.ToGame();
+					
+	        	});
 	            
 	        }
 	        GUILayout.EndHorizontal();  
