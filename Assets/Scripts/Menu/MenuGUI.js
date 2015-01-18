@@ -11,7 +11,7 @@ class MenuGUI extends MonoBehaviour
 	{
 		if ( GUI.Button(Rect(100,100,200,50), "", this.hostBtnStyle))
 		{
-			new HostedGame(32, 8080, true, "").Host();		
+			new HostedGame(32, 8080, true, "", "Epic Game", "The Most Epic Game of All!").Host();		
 		}
 		
 		if ( GUI.Button(Rect(100,200,200,50), "", this.joinBtnStyle))
